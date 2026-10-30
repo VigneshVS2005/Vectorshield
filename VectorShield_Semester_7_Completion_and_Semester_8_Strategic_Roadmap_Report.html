@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vector-Shield: Semester 7 Master Completion Report & Sem 8 Roadmap</title>
+    <title>Vector-Shield: Semester 7 Progress Report & Action Plan</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -112,20 +112,6 @@
             padding: 2px 8px;
             border-radius: 4px;
         }
-        .tag-warn {
-            background: #fef9c3;
-            color: #854d0e;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-        .tag-quar {
-            background: #fee2e2;
-            color: #991b1b;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
         .footer {
             margin-top: 48px;
             border-top: 1px solid #e2e8f0;
@@ -138,28 +124,28 @@
 </head>
 <body>
     <div class="container">
-        <div class="header-badge">Academic Project Charter & Progress Report</div>
-        <h1>Vector-Shield: Semester 7 Master Completion Report & Sem 8 Strategic Roadmap</h1>
+        <div class="header-badge">Academic Project Progress & Strategic Action Plan</div>
+        <h1>Vector-Shield: Semester 7 Progress Report & Action Plan</h1>
         
         <div class="meta-box">
             <p><strong>Department:</strong> Department of Artificial Intelligence, School of AI & Data Science, Amrita Vishwa Vidyapeetham, Coimbatore</p>
-            <p><strong>AIDS Team 14:</strong> Vignesh V S (cb.ai.u4aid23057), Karthick Ruban T (cb.ai.u4aid23017), Sanjay Senthil (cb.ai.u4aid23042), Hari Prakash V (cb.ai.u4aid23047)</p>
+            <p><strong>AIDS Team 14:</strong> Vignesh V S (cb.ai.u4aid23057) - Lead | Karthick Ruban T (cb.ai.u4aid23017) | Sanjay Senthil (cb.ai.u4aid23042) | Hari Prakash V (cb.ai.u4aid23047)</p>
             <p><strong>Project Supervisor & Guide:</strong> Dr. Lekshmi C. R., Assistant Professor, Department of AI</p>
             <p><strong>Live SaaS Prototype:</strong> <a href="https://vectorshield.streamlit.app/" target="_blank">https://vectorshield.streamlit.app/</a> | <strong>GitHub:</strong> <a href="https://github.com/VigneshVS2005/Vectorshield" target="_blank">VigneshVS2005/Vectorshield</a></p>
-            <p><strong>Date of Submission:</strong> October / November 2026</p>
+            <p><strong>Academic Status:</strong> Semester 7 Progress Review (Work Done So Far) | Target Technical Completion: Mid-December 2026</p>
         </div>
 
         <h2>Executive Summary</h2>
-        <p>This master document provides a comprehensive report on the accomplishments completed during <strong>Semester 7</strong> for the degree of Bachelor of Technology in Artificial Intelligence and Data Science, details an objective <strong>Gap Analysis</strong> of current operational constraints, and articulates a high-impact <strong>Semester 8 Strategic Roadmap</strong> targeting an A* research publication, international patent filing, and commercial enterprise productization.</p>
+        <p>This master document provides a comprehensive report on the accomplishments completed during <strong>Semester 7 so far</strong> for the degree of Bachelor of Technology in Artificial Intelligence and Data Science, details an objective <strong>Gap Analysis</strong>, and articulates a focused <strong>Strategic Action Plan</strong> aiming to complete technical enhancements by <strong>mid-December 2026</strong>, followed by immediate research paper submissions and commercial productization.</p>
 
         <h2>1. Foundational Concept: What Vector-Shield is All About</h2>
         <p>Enterprise Generative AI is rapidly evolving into <strong>Autonomous Agentic RAG</strong> where AI models don't just answer questions, but autonomously invoke API endpoints and financial tools (e.g., SWIFT wire transfers, database updates). However, these systems are critically vulnerable to <strong>Indirect Prompt Injections (IPI)</strong> and persistent vector database poisoning.</p>
         <blockquote>
             <strong>The Core Problem:</strong> An attacker injects hidden malicious directives into untrusted documents (PDF invoices, tickets). When retrieved into an agent's context, the LLM executes the attack—transferring funds or exfiltrating credentials. Existing tools like Llama Guard 3 add <strong>800–2,500 ms of latency</strong>, incur massive token costs, and hard-crash user sessions upon attack detection.
         </blockquote>
-        <p><strong>The Vector-Shield Solution:</strong> Vector-Shield acts as a high-speed, dual-tier neuro-symbolic firewall directly in high-dimensional embedding spaces ($\mathbb{R}^{384} 	o \mathbb{R}^{16}$) <em>before</em> prompt synthesis. In Stage 1, non-linear scaled LOF catches obvious outliers in <strong>1.82 ms with zero token cost</strong>. In Stage 2, borderline ambiguous payloads are classified by a fine-tuned <strong>ModernBERT</strong> model in 12.2 ms. An autonomous <strong>LangGraph self-healing loop</strong> dynamically blacklists poison IDs and re-retrieves clean context, while automated <strong>SIEM webhooks</strong> notify enterprise Security Operations Centers (SOC).</p>
+        <p><strong>The Vector-Shield Solution:</strong> Vector-Shield acts as a high-speed, dual-tier neuro-symbolic firewall directly in high-dimensional embedding spaces before prompt synthesis. In Stage 1, non-linear scaled LOF catches obvious outliers in <strong>1.82 ms with zero token cost</strong>. In Stage 2, borderline ambiguous payloads are classified by a fine-tuned <strong>ModernBERT</strong> model in 12.2 ms. An autonomous <strong>LangGraph self-healing loop</strong> dynamically blacklists poison IDs and re-retrieves clean context, while automated <strong>SIEM webhooks</strong> notify enterprise Security Operations Centers (SOC).</p>
 
-        <h2>2. Semester 7 Completed Modules Audit</h2>
+        <h2>2. Semester 7 Accomplishments So Far</h2>
         <table>
             <thead>
                 <tr>
@@ -173,14 +159,14 @@
                 <tr>
                     <td><strong>M1</strong></td>
                     <td><strong>Mathematical LOF Metric</strong></td>
-                    <td>Scaled LOF with adaptive 16-D PCA and centroid drift factor $(d_{	ext{cos}}/	au)^{1.2}$.</td>
+                    <td>Scaled LOF with adaptive 16-D PCA and centroid drift factor (d_cos/&tau;)^1.2.</td>
                     <td><span class="tag-safe">100% Outlier Isolation</span></td>
                 </tr>
                 <tr>
                     <td><strong>M2</strong></td>
-                    <td><strong>Ground-Truth Dataset</strong></td>
-                    <td>175 authentic samples (100 clean enterprise banking/SOX/GDPR docs + 75 Garak/HuggingFace injections).</td>
-                    <td><span class="tag-safe">175 Verified Samples</span></td>
+                    <td><strong>Ground-Truth Evaluation Benchmark</strong></td>
+                    <td>Verified corporate guidelines (SWIFT wire, SOX, GDPR) + real adversarial injections (Garak/HuggingFace).</td>
+                    <td><span class="tag-safe">Verified Corpus</span></td>
                 </tr>
                 <tr>
                     <td><strong>M3</strong></td>
@@ -197,7 +183,7 @@
                 <tr>
                     <td><strong>M5</strong></td>
                     <td><strong>LangGraph Self-Healing Loop</strong></td>
-                    <td>Cyclic StateGraph (retrieve $	o$ intercept $	o$ heal $	o$ respond); dynamic blacklist rewrites.</td>
+                    <td>Cyclic StateGraph (retrieve &rarr; intercept &rarr; heal &rarr; respond); dynamic blacklist rewrites.</td>
                     <td><span class="tag-safe">Zero-Crash Recovery</span></td>
                 </tr>
                 <tr>
@@ -221,80 +207,31 @@
             </tbody>
         </table>
 
-        <h2>3. Semester 7 Gap Analysis (Honest Self-Critique)</h2>
-        <p>While Semester 7 delivered a functional, mathematically validated prototype (TRL 6), the following constraints were identified for resolution in Semester 8:</p>
+        <h2>3. Immediate Action Plan & Strategic Execution</h2>
+        <p>Our team is executing an agile action plan targeting technical completion by <strong>mid-December 2026</strong>, followed by immediate research paper submissions and commercial rollout:</p>
         <ul>
-            <li><strong>Dataset Scale (G1):</strong> Current dataset comprises 175 curated samples. Top-tier cybersecurity publications (USENIX / IEEE S&P) require 5,000–10,000 samples across banking, healthcare, legal, and DevOps domains.</li>
-            <li><strong>Modality Limitations (G2):</strong> Currently constrained to text embeddings. Misses multi-modal visual prompt injections embedded in scanned PDF invoices and diagrams (CLIP/SigLIP).</li>
-            <li><strong>Deployment Topology (G3):</strong> Currently implemented as an in-process Python library. Real-world microservices require an out-of-process C++/Rust Envoy sidecar proxy.</li>
-            <li><strong>Static Centroid Drift (G4):</strong> Enterprise centroid $\mathbf{c}$ is computed offline. Streaming online incremental updates are required as new corporate documents are indexed.</li>
-            <li><strong>White-Box Gradient Attacks (G5):</strong> Resilient against empirical black-box attacks, but must be formally evaluated against mathematical token optimizers (GCG / HotFlip).</li>
-            <li><strong>Multi-Agent Swarm Testing (G6):</strong> Currently tested on single-agent RAG; must be expanded to multi-agent consensus networks (AutoGen / CrewAI).</li>
+            <li><strong>Action Item 1: Massive Dataset Scaling (10,000+ to 25,000+ Samples)</strong> &mdash; Expanding across 5 enterprise domains: Banking (ISO 20022), Healthcare (HIPAA EHRs), Legal (SEC EDGAR), Cloud DevOps (AWS IAM / K8s), and Code RAG.</li>
+            <li><strong>Action Item 2: Multi-Modal Topographic Shield (Vision + Text)</strong> &mdash; Integrating CLIP ViT-L/14 & SigLIP embeddings to intercept scanned document image injections.</li>
+            <li><strong>Action Item 3: High-Performance C++/Rust Envoy Sidecar</strong> &mdash; Compiling PCA-LOF into an Envoy filter (&lt; 500 &mu;s latency for Kubernetes pods).</li>
+            <li><strong>Action Item 4: White-Box Adversarial Stress-Testing</strong> &mdash; Subjecting system to GCG & HotFlip white-box gradient attacks; training robust adversarial defense.</li>
+            <li><strong>Action Item 5: Native Vector DB Connectors & Streaming Centroid</strong> &mdash; Plug-and-play connectors for Pinecone, Milvus, Qdrant + streaming online centroid updates (EMA).</li>
+            <li><strong>Action Item 6: Multi-Agent Swarm Defense</strong> &mdash; Multi-agent consensus guardrail for AutoGen / CrewAI agent swarms.</li>
         </ul>
 
-        <h2>4. Semester 8 Strategic Roadmap & Timeline</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Phase & Milestone</th>
-                    <th>Key Implementation Tasks</th>
-                    <th>Target Timeline</th>
-                    <th>Success Deliverable</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Phase 1: Dataset Scaling</strong></td>
-                    <td>Expand to 10k+ multi-domain samples (Healthcare HIPAA, Legal SEC, Banking ISO, Code RAG).</td>
-                    <td>Weeks 1–4 (Dec 2026)</td>
-                    <td>10k Benchmark Suite</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 2: Multi-Modal Shield</strong></td>
-                    <td>Integrate CLIP ViT-L/14 & SigLIP embeddings to intercept scanned document image injections.</td>
-                    <td>Weeks 5–8 (Jan 2027)</td>
-                    <td>Multi-Modal Interceptor</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 3: Envoy C++ Sidecar</strong></td>
-                    <td>Compile PCA-LOF into high-speed C++/Rust Envoy filter (< 500 &mu;s latency for Kubernetes).</td>
-                    <td>Weeks 9–12 (Feb 2027)</td>
-                    <td>Kubernetes Helm Chart</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 4: Gradient Hardening</strong></td>
-                    <td>Subject system to GCG & HotFlip white-box gradient attacks; train robust adversarial defense.</td>
-                    <td>Weeks 13–16 (Mar 2027)</td>
-                    <td>Adversarial Robustness Suite</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 5: Streaming Connectors</strong></td>
-                    <td>Native Pinecone/Milvus/Qdrant plugins + streaming online centroid updates (EMA).</td>
-                    <td>Weeks 17–20 (Apr 2027)</td>
-                    <td>Production Vector DB Connectors</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 6: Multi-Agent Consensus</strong></td>
-                    <td>Multi-agent LangGraph consensus network; prevent cascading agent swarm infections.</td>
-                    <td>Weeks 21–24 (May 2027)</td>
-                    <td>Multi-Agent Guardrail</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>5. Publication Strategy & Target Venues</h2>
+        <h2>4. Expanded Publication Strategy & Target Venues</h2>
         <p><strong>Target Research Paper Title:</strong> <em>"Topographic Anomaly Detection and Stateful Semantic Guardrails in High-Dimensional Embedding Spaces for Securing Autonomous Agentic RAG"</em></p>
         <ul>
-            <li><strong>Tier 1 Cybersecurity Conferences:</strong> USENIX Security 2027 / ACM CCS 2027 (Fall 2027 cycle).</li>
-            <li><strong>Tier 1 AI / NLP Venues:</strong> ACL 2027 / EMNLP 2027 (Industry & System Demonstrations track).</li>
-            <li><strong>Premier IEEE Journals:</strong> IEEE Transactions on Dependable and Secure Computing (TDSC) / IEEE TIFS.</li>
+            <li><strong>Tier 1 Cybersecurity Conferences:</strong> USENIX Security, ACM CCS, IEEE S&P (Oakland), NDSS.</li>
+            <li><strong>Tier 1 AI / NLP Venues:</strong> ACL, EMNLP, NAACL, NeurIPS / ICLR (SafeGenAI & Alignment tracks).</li>
+            <li><strong>Premier Flagship Journals:</strong> IEEE Transactions on Information Forensics and Security (TIFS), IEEE Transactions on Dependable and Secure Computing (TDSC), Computers & Security (COSE).</li>
             <li><strong>Comparative Baselines:</strong> Llama Guard 3, NeMo Guardrails, SmoothLLM, PromptGuard-86M, Securita.</li>
         </ul>
 
-        <h2>6. Intellectual Property & Commercialization</h2>
+        <h2>5. Maximum Product Vision & Intellectual Property</h2>
         <ul>
-            <li><strong>Patent Strategy:</strong> Filing Indian Provisional Patent on <em>"Topographic non-linear scaled local outlier factor for high-dimensional semantic spaces and autonomous state-machine self-healing in agentic AI"</em>.</li>
-            <li><strong>Commercial TRL Trajectory:</strong> Advancing from Current TRL 6 (Functional Prototype) to TRL 8 (Qualified Production Sidecar) during Sem 8, enabling commercial SaaS spin-off.</li>
+            <li><strong>Universal Enterprise Security Mesh:</strong> Out-of-process Envoy sidecar intercepting vector database calls in &lt; 500 &mu;s.</li>
+            <li><strong>Multi-Modal Ingestion Firewall:</strong> Pre-retrieval screening of scanned PDF invoices and infographics.</li>
+            <li><strong>Patent Filing:</strong> Indian Provisional Patent Application covering: (1) Non-linear centroid-drift scaled LOF in PCA-reduced embedding manifolds; (2) Cyclic state-machine self-healing for agentic workflows.</li>
         </ul>
 
         <div class="footer">
