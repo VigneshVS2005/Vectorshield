@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-07T04:42:06Z",
+  "total_samples": 1200,
+  "class_0_clean_samples": 600,
+  "class_1_attack_samples": 600,
+  "train_samples": 840,
+  "val_samples": 180,
+  "test_samples": 180,
+  "accuracy_pct": 100.0,
+  "precision_pct": 100.0,
+  "recall_pct": 100.0,
+  "f1_score_pct": 100.0,
+  "roc_auc": 1.0,
+  "mean_stage1_latency_ms": 14.39,
+  "unprotected_asr_pct": 100.0,
+  "protected_asr_pct": 0.0,
+  "threat_reduction_pct": 100.0,
+  "stage1_quarantined": 71,
+  "stage2_routed": 19,
+  "supervisor": "Dr. Lekshmi C. R.",
+  "institution": "Amrita Vishwa Vidyapeetham"
+}

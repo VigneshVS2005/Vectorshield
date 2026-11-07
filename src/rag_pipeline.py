@@ -50,6 +50,14 @@ class VectorShieldRAGPipeline:
         self._check_langgraph()
         self.stage2 = Stage2ModernBERTClassifier()
 
+        try:
+            from src.multimodal_shield import VectorShieldMultimodalDetector
+            self.multimodal_shield = VectorShieldMultimodalDetector(embedding_dim=384)
+            print("[Pipeline] Multimodal Vision-Language Shield loaded successfully.")
+        except Exception as e:
+            print(f"[Pipeline] Note on multimodal shield: {e}")
+            self.multimodal_shield = None
+
     def _load_corpus(self):
         """Loads clean and benchmark documents."""
         if not os.path.exists(self.data_file):
@@ -351,7 +359,7 @@ class VectorShieldRAGPipeline:
         new_id = f"DOC_{len(self.documents) + 1:04d}"
         doc_vec = self.embed_query(text)
 
-        siem_status = "NOT_TRIGGERED"
+        adaptive_res = None
         if is_suspicious:
             siem_status = self.send_siem_alert({
                 "event_type": "POISONED_INGESTION_QUARANTINE",
@@ -374,6 +382,10 @@ class VectorShieldRAGPipeline:
             self.documents.append(doc_entry)
             self.embeddings = np.vstack([self.embeddings, doc_vec])
 
+            # Trigger Adaptive Centroid Evolution for verified inliers
+            if hasattr(self.interceptor, "update_centroid_adaptive"):
+                adaptive_res = self.interceptor.update_centroid_adaptive(doc_vec)
+
         status_label = "QUARANTINED_ANOMALY" if is_suspicious else "APPROVED_SAFE"
 
         return {
@@ -387,6 +399,7 @@ class VectorShieldRAGPipeline:
             "chunk_evaluations": chunk_evaluations,
             "is_quarantined": is_suspicious,
             "siem_dispatch": siem_status,
+            "adaptive_centroid_res": adaptive_res,
             "total_documents_now": len(self.documents)
         }
 
@@ -428,6 +441,38 @@ class VectorShieldRAGPipeline:
                 return f"WEBHOOK_FAILED ({e} - Logged to Local SOC Trail)"
 
         return "LOGGED_TO_SIEM_AUDIT_TRAIL"
+
+    def evaluate_multimodal_document(
+        self,
+        image_input,
+        text_content: str = "",
+        title: str = "Uploaded Scanned Document",
+        category: str = "Financial Operations"
+    ) -> dict:
+        """
+        Screens scanned documents, invoices, or charts for visual prompt injections.
+        """
+        if self.multimodal_shield is None:
+            from src.multimodal_shield import VectorShieldMultimodalDetector
+            self.multimodal_shield = VectorShieldMultimodalDetector(embedding_dim=384)
+
+        result = self.multimodal_shield.evaluate_multimodal_sample(
+            image_input=image_input,
+            text_content=text_content,
+            title=title,
+            category=category
+        )
+
+        if result.get("is_quarantined", False):
+            self.send_siem_alert({
+                "event_type": "MULTIMODAL_VISUAL_INJECTION_QUARANTINE",
+                "title": title,
+                "visual_outlier_score": result.get("visual_outlier_score"),
+                "cross_modal_incoherence": result.get("cross_modal_incoherence"),
+                "reason": "; ".join(result.get("quarantine_reasons", []))
+            })
+
+        return result
 
     def run_benchmark(self) -> dict:
         """
