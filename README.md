@@ -173,10 +173,10 @@ Vectorshield/
 **Department of Artificial Intelligence and Data Science**  
 **Amrita Vishwa Vidyapeetham, Coimbatore**
 
-- **Vignesh V S** (`cb.ai.u4aid23057`) — **Team Lead & Lead Architect** *(Vector Space Geometry Core & LOF Interceptor)*
-- **Karthick Ruban T** (`cb.ai.u4aid23017`) — *Threat Modeling & NVIDIA Garak Simulation*
-- **Sanjay Senthil** (`cb.ai.u4aid23042`) — *ChromaDB Middleware Interceptor & Deep Learning*
-- **Hari Prakash V** (`cb.ai.u4aid23047`) — *Clean Corpus Ingestion & Evaluation Suite*
+- **Vignesh V S** ([@VigneshVS2005](https://github.com/VigneshVS2005)) (`cb.ai.u4aid23057`) — **Team Lead & Lead Architect** *(Vector Space Geometry Core & LOF Interceptor)*
+- **Karthick Ruban T** ([@Karthickruban](https://github.com/Karthickruban)) (`cb.ai.u4aid23017`) — *Threat Modeling & NVIDIA Garak Simulation*
+- **Sanjay Senthil** ([@sanjaysenthil17](https://github.com/sanjaysenthil17)) (`cb.ai.u4aid23042`) — *ChromaDB Middleware Interceptor & Deep Learning*
+- **Hari Prakash V** ([@Hariprakash024](https://github.com/Hariprakash024)) (`cb.ai.u4aid23047`) — *Clean Corpus Ingestion & Evaluation Suite*
 - **Project Supervisor:** Dr. Lekshmi CR
 
 ---
